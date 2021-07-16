@@ -1,0 +1,42 @@
+{
+  "name":"@omiu/component",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "vite",
+    "build": "tsc && vite build --base=./",
+    "serve": "vite preview",
+    "test": "web-test-runner \"test/*.test.js\" --node-resolve",
+    "test:watch": "web-test-runner \"test/*.test.js\" --node-resolve --watch"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tencent/omi/issues"
+  },
+  "files": ["dist"],
+  "main": "./dist/my-lib.umd.js",
+  "module": "./dist/my-lib.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/my-lib.es.js",
+      "require": "./dist/my-lib.umd.js"
+    }
+  },
+  "devDependencies": {
+    "@esm-bundle/chai": "^4.3.4",
+    "@open-wc/testing": "^2.5.33",
+    "@web/test-runner": "^0.13.13",
+    "less": "^4.1.1",
+    "typescript": "^4.3.2",
+    "vite": "^2.3.7"
+  },
+  "dependencies": {
+    "@omiu/common": "^0.0.9",
+    "omi": "latest"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "tabWidth": 2,
+    "useTabs": false
+  }
+}
