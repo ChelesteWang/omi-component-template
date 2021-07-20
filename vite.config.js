@@ -16,15 +16,26 @@ export default {
     minify: false,
     lib: {
       entry: resolve(__dirname, 'src/index.tsx'),
-      name: pkg.name,
+      name: 'index'
     },
     rollupOptions: {
       external: ['omi'],
-      output: {
-        globals: {
-          omi: 'omi',
+      input: ['./src/index.tsx'],
+      output: [
+        {
+          dir: null,
+          file: resolve(__dirname, './dist/index.umd.js'),
+          format: 'umd',
+          globals: {
+            vue: 'omi'
+          }
         },
-      },
+        {
+          dir: null,
+          file: resolve(__dirname, './dist/index.esm.js'),
+          format: 'es'
+        }
+      ],
     },
   },
   plugins: [licensePlugin],
