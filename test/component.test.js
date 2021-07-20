@@ -1,4 +1,4 @@
-import { html, fixture, expect } from '@open-wc/testing'
+import { fixture, expect } from '@open-wc/testing'
 
 import '../dist/component.es'
 
@@ -15,14 +15,14 @@ const defaultProps = {
 
 describe('Testing o-button', () => {
   it('tests button with default props', async () => {
-    const el = await fixture(html` <o-button>Default</o-button> `)
+    const el = await fixture(` <o-button>Default</o-button> `)
     const button = el.shadowRoot.querySelector('button')
     const classList = button.getAttribute('class').split(' ')
     expect(classList.includes('o-button')).to.be.true
   })
 
   it('tests setting type', async () => {
-    const el = await fixture(html`
+    const el = await fixture(`
       <o-button type="primary">Primary</o-button>
     `)
     const button = el.shadowRoot.querySelector('button')
@@ -31,7 +31,7 @@ describe('Testing o-button', () => {
   })
 
   it('tests setting disabled', async () => {
-    const el = await fixture(html` <o-button disabled>Disabled</o-button> `)
+    const el = await fixture(` <o-button disabled>Disabled</o-button> `)
     const button = el.shadowRoot.querySelector('button')
     const classList = button.getAttribute('class').split(' ')
     expect(button.getAttribute('disabled')).to.equal('')
@@ -39,48 +39,48 @@ describe('Testing o-button', () => {
   })
 
   it('tests setting plain', async () => {
-    const el = await fixture(html` <o-button plain>Plain</o-button> `)
+    const el = await fixture(` <o-button plain>Plain</o-button> `)
     const button = el.shadowRoot.querySelector('button')
     const classList = button.getAttribute('class').split(' ')
     expect(classList.includes('is-plain')).to.be.true
   })
 
   it('tests setting size', async () => {
-    const el = await fixture(html` <o-button size="medium">Medium</o-button> `)
+    const el = await fixture(` <o-button size="medium">Medium</o-button> `)
     const button = el.shadowRoot.querySelector('button')
     const classList = button.getAttribute('class').split(' ')
     expect(classList.includes('o-button-medium')).to.be.true
   })
 
   it('tests setting round', async () => {
-    const el = await fixture(html` <o-button round>Round</o-button> `)
+    const el = await fixture(` <o-button round>Round</o-button> `)
     const button = el.shadowRoot.querySelector('button')
     const classList = button.getAttribute('class').split(' ')
     expect(classList.includes('is-round')).to.be.true
   })
 
   it('tests setting circle', async () => {
-    const el = await fixture(html` <o-button circle>Circle</o-button> `)
+    const el = await fixture(` <o-button circle>Circle</o-button> `)
     const button = el.shadowRoot.querySelector('button')
     const classList = button.getAttribute('class').split(' ')
     expect(classList.includes('is-circle')).to.be.true
   })
 
   it('tests setting block', async () => {
-    const el = await fixture(html` <o-button block>Block</o-button> `)
+    const el = await fixture(` <o-button block>Block</o-button> `)
     const button = el.shadowRoot.querySelector('button')
     const classList = button.getAttribute('class').split(' ')
     expect(classList.includes('is-block')).to.be.true
   })
 
   it('tests setting loading', async () => {
-    const el = await fixture(html` <o-button loading>Loading</o-button> `)
+    const el = await fixture(` <o-button loading>Loading</o-button> `)
     const svg = el.shadowRoot.querySelector('svg')
     expect(svg).to.not.be.null
   })
 
   it('passes the a11y audit', async () => {
-    const el = await fixture(html` <o-button></o-button> `)
+    const el = await fixture(` <o-button></o-button> `)
     expect(el).shadowDom.to.be.accessible()
   })
 })
