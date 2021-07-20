@@ -23,6 +23,7 @@
   "scripts": {
     "build": "tsc && vite build --base=./",
     "docs": "node ./docs-gen.js",
+    "lint": "eslint \"src/*.{js,ts}\" --quiet --fix",
     "test": "web-test-runner \"test/*.test.js\" --node-resolve",
     "test:watch": "web-test-runner \"test/*.test.js\" --node-resolve --watch"
   },
@@ -32,8 +33,11 @@
   },
   "devDependencies": {
     "@esm-bundle/chai": "^4.3.4",
-    "@open-wc/testing": "^2.5.33",
+    "@open-wc/testing": "^3.0.0-next.2",
     "@web/test-runner": "^0.13.13",
+    "eslint": "^7.31.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "sass": "^1.35.2",
     "typescript": "^4.3.2",
     "vite": "^2.3.7",
@@ -41,6 +45,7 @@
   },
   "dependencies": {
     "@omiu/common": "^0.0.9",
+    "esbuild": "^0.12.15",
     "omi": "latest"
   },
   "prettier": {

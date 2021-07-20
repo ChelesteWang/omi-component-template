@@ -22,7 +22,7 @@ export default {
       external: ['omi'],
       output: {
         globals: {
-          omi: 'Omi',
+          omi: 'omi',
         },
       },
     },
